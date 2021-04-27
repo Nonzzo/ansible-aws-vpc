@@ -17,4 +17,3 @@ zone2: us-east-2b
 zone3: us-east-2c
 
 state: present
-#
