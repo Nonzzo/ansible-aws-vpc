@@ -154,5 +154,3 @@
         - igw_out.gateway_id
         - PubRT_out.route_table.id
         - privRT_out.route_table.id
-        
-        
