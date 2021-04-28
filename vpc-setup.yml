@@ -114,7 +114,7 @@
         routes:
           - dest: 0.0.0.0/0
             gateway_id: "{{igw_out.gateway_id}}"
-      register: Pubrt_out
+      register: PubRT_out
 
     - name: Create new nat gateway and allocate new EIP if a nat gateway does not yet exist in the subnet.
       ec2_vpc_nat_gateway:
