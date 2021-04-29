@@ -29,7 +29,7 @@
         description: Allow port 80 from everywhere and all port within sg
         region: "{{region}}"
         vpcid: "{{vpcid}}"
-        rule:
+        rules:
           - proto: tcp
             from_port: 80
             to_port: 80
@@ -65,7 +65,7 @@
         rules:
           - proto: all
             group_id: "{{vproStackSG_out.group_id}}"
-            
+
 
     
 
