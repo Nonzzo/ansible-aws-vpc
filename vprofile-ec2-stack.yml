@@ -57,7 +57,7 @@
 
     - name: Update Security group with its own sg id
       ec2_group:
-        name: vproStackSG-sg
+        name: vproStack-sg
         description: Allow port 22 from everywhere and all port within sg
         region: "{{region}}"
         vpcid: "{{vpcid}}"
