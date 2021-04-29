@@ -28,7 +28,7 @@
         name: vproELB-sg
         description: Allow port 80 from everywhere and all port within sg
         region: "{{region}}"
-        vpcid: "{{vpcid}}"
+        vpc_id: "{{vpcid}}"
         rules:
           - proto: tcp
             from_port: 80
@@ -41,7 +41,7 @@
         name: vproStack-sg
         description: Allow port 22 from everywhere and all port within sg
         region: "{{region}}"
-        vpcid: "{{vpcid}}"
+        vpc_id: "{{vpcid}}"
         purge_rules: no
         rules:
           - proto: tcp
@@ -60,7 +60,7 @@
         name: vproStack-sg
         description: Allow port 22 from everywhere and all port within sg
         region: "{{region}}"
-        vpcid: "{{vpcid}}"
+        vpc_id: "{{vpcid}}"
         purge_rules: no
         rules:
           - proto: all
