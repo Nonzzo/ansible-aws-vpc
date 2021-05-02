@@ -125,46 +125,46 @@
               tags: 
                 - deploy
 
-              rescue: 
-                - shell: cp -r old_ROOT ROOT
-                  args: 
-                    chdir: /usr/local/tomcat8/webapps/
-
           rescue: 
-            - name: Start tomcat8 svc 
-              service: 
-                name: tomcat8 
-                state: started 
+           - shell: cp -r old_ROOT ROOT
+             args: 
+               chdir: /usr/local/tomcat8/webapps/
 
+      rescue: 
         - name: Start tomcat8 svc 
           service: 
             name: tomcat8 
-            state: started
-          when: deploy_info.changed
-          tags: 
-            - deploy
+            state: started 
 
-        - name: Wait until ROOT.war is extracted to ROOT directory 
-          wait_for: 
-            path: /usr/local/tomcat8/webapps/ROOT
-          tags: 
-            - deploy 
+    - name: Start tomcat8 svc 
+      service: 
+        name: tomcat8 
+        state: started
+        when: deploy_info.changed
+      tags: 
+        - deploy
 
-        - name: Deploy web configuration file 
-          template: 
-            src: templates/application.j2
-            dest: /usr/local/tomcat8/webapps/ROOT/WEB-INF/classes/application.properties
-            force: yes
-          notify:
-            - Restart Tomcat 
-          tags: 
-            - deploy
+    - name: Wait until ROOT.war is extracted to ROOT directory 
+      wait_for: 
+        path: /usr/local/tomcat8/webapps/ROOT
+      tags: 
+        - deploy 
 
-      handlers:
-        - name: Restart Tomcat 
-          service: 
-            name: tomcat8
-            state: restarted
+    - name: Deploy web configuration file 
+      template: 
+        src: templates/application.j2
+        dest: /usr/local/tomcat8/webapps/ROOT/WEB-INF/classes/application.properties
+        force: yes
+      notify:
+        - Restart Tomcat 
+      tags: 
+        - deploy
+
+  handlers:
+    - name: Restart Tomcat 
+      service: 
+        name: tomcat8
+        state: restarted   
             
 
 
