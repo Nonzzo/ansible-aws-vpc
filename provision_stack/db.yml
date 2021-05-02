@@ -1,6 +1,7 @@
 - name: Setup Mysql with accounts db and remote login
   hosts: dbsrvgrp
   gather_facts: no
+  become: yes
   tasks:
     - name: Installing Mysql service and dependencies
       package:
