@@ -1,0 +1,132 @@
+2021-05-02 16:52:35,273 p=1463 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision_stack/inventory-vpro with yaml plugin: YAML inventory has
+invalid structure, it should be a dictionary, got: <class 'ansible.parsing.yaml.objects.AnsibleUnicode'>
+
+2021-05-02 16:52:35,274 p=1463 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision_stack/inventory-vpro with ini plugin: /home/ubuntu/ansible-
+aws-vpc/provision_stack/inventory-vpro:2: Expected key=value host variable assignment, got: app01
+
+2021-05-02 16:52:35,274 p=1463 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision_stack/inventory-vpro as an inventory source
+
+2021-05-02 16:52:35,274 p=1463 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2021-05-02 16:52:35,281 p=1463 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2021-05-02 16:52:35,440 p=1463 u=ubuntu n=ansible | ERROR! 'host' is not a valid attribute for a Play
+
+The error appears to be in '/home/ubuntu/ansible-aws-vpc/provision_stack/build.yml': line 1, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Generate artifact, copy artifact & sql file to files directory
+  ^ here
+
+2021-05-02 16:54:03,836 p=1500 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision_stack/inventory-vpro with yaml plugin: YAML inventory has
+invalid structure, it should be a dictionary, got: <class 'ansible.parsing.yaml.objects.AnsibleUnicode'>
+
+2021-05-02 16:54:03,837 p=1500 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision_stack/inventory-vpro with ini plugin: /home/ubuntu/ansible-
+aws-vpc/provision_stack/inventory-vpro:2: Expected key=value host variable assignment, got: app01
+
+2021-05-02 16:54:03,837 p=1500 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision_stack/inventory-vpro as an inventory source
+
+2021-05-02 16:54:03,837 p=1500 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2021-05-02 16:54:03,841 p=1500 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2021-05-02 16:54:04,050 p=1500 u=ubuntu n=ansible | PLAY [Generate artifact, copy artifact & sql file to files directory] **************************************************************
+2021-05-02 16:54:04,086 p=1500 u=ubuntu n=ansible | TASK [Gathering Facts] *************************************************************************************************************
+2021-05-02 16:54:05,274 p=1500 u=ubuntu n=ansible | ok: [localhost]
+2021-05-02 16:54:05,288 p=1500 u=ubuntu n=ansible | TASK [Install jdk, maven, git] *****************************************************************************************************
+2021-05-02 16:54:16,699 p=1500 u=ubuntu n=ansible | ok: [localhost] => (item=git)
+2021-05-02 16:54:58,676 p=1500 u=ubuntu n=ansible | changed: [localhost] => (item=openjdk-8-jdk)
+2021-05-02 16:55:07,859 p=1500 u=ubuntu n=ansible | changed: [localhost] => (item=maven)
+2021-05-02 16:55:07,873 p=1500 u=ubuntu n=ansible | TASK [Clone surface code from github] **********************************************************************************************
+2021-05-02 16:55:11,398 p=1500 u=ubuntu n=ansible | changed: [localhost]
+2021-05-02 16:55:11,407 p=1500 u=ubuntu n=ansible | TASK [mvn install command to build artifact] ***************************************************************************************
+2021-05-02 16:55:56,840 p=1500 u=ubuntu n=ansible | changed: [localhost]
+2021-05-02 16:55:56,859 p=1500 u=ubuntu n=ansible | TASK [Copy artifacts to files directory] *******************************************************************************************
+2021-05-02 16:55:57,917 p=1500 u=ubuntu n=ansible | changed: [localhost] => (item=/home/ubuntu/ansible-aws-vpc/provision_stack/Vprofile-repo/target/vprofile-v2.war)
+2021-05-02 16:55:57,927 p=1500 u=ubuntu n=ansible | TASK [Copy SQL file to files directory] ********************************************************************************************
+2021-05-02 16:55:58,328 p=1500 u=ubuntu n=ansible | changed: [localhost]
+2021-05-02 16:55:58,343 p=1500 u=ubuntu n=ansible | PLAY RECAP *************************************************************************************************************************
+2021-05-02 16:55:58,343 p=1500 u=ubuntu n=ansible | localhost                  : ok=6    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-05-02 17:19:01,916 p=7507 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision_stack/inventory-vpro with yaml plugin: YAML inventory has
+invalid structure, it should be a dictionary, got: <class 'ansible.parsing.yaml.objects.AnsibleUnicode'>
+
+2021-05-02 17:19:01,917 p=7507 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision_stack/inventory-vpro with ini plugin: /home/ubuntu/ansible-
+aws-vpc/provision_stack/inventory-vpro:2: Expected key=value host variable assignment, got: app01
+
+2021-05-02 17:19:01,917 p=7507 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision_stack/inventory-vpro as an inventory source
+
+2021-05-02 17:19:01,917 p=7507 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2021-05-02 17:19:01,924 p=7507 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2021-05-02 17:19:02,259 p=7507 u=ubuntu n=ansible | PLAY [host to ip mapping in /etc/hosts file of all the instances in the stack] *****************************************************
+2021-05-02 17:19:02,259 p=7507 u=ubuntu n=ansible | skipping: no hosts matched
+2021-05-02 17:19:02,259 p=7507 u=ubuntu n=ansible | PLAY RECAP *************************************************************************************************************************
+2021-05-02 17:27:41,316 p=7539 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision_stack/inventory-vpro with yaml plugin: YAML inventory has
+invalid structure, it should be a dictionary, got: <class 'ansible.parsing.yaml.objects.AnsibleUnicode'>
+
+2021-05-02 17:27:41,316 p=7539 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision_stack/inventory-vpro with ini plugin: /home/ubuntu/ansible-
+aws-vpc/provision_stack/inventory-vpro:5: Expected key=value host variable assignment, got: db01
+
+2021-05-02 17:27:41,317 p=7539 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision_stack/inventory-vpro as an inventory source
+
+2021-05-02 17:27:41,317 p=7539 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2021-05-02 17:27:41,471 p=7539 u=ubuntu n=ansible | PLAY [host to ip mapping in /etc/hosts file of all the instances in the stack] *****************************************************
+2021-05-02 17:27:41,501 p=7539 u=ubuntu n=ansible | TASK [Gathering Facts] *************************************************************************************************************
+2021-05-02 17:27:42,653 p=7539 u=ubuntu n=ansible | fatal: [web01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ubuntu@172.20.4.74: Permission denied (publickey).", "unreachable": true}
+2021-05-02 17:27:42,665 p=7539 u=ubuntu n=ansible | fatal: [app01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ubuntu@172.20.4.204: Permission denied (publickey).", "unreachable": true}
+2021-05-02 17:27:42,686 p=7539 u=ubuntu n=ansible | fatal: [rmq01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ubuntu@172.20.4.239: Permission denied (publickey).", "unreachable": true}
+2021-05-02 17:27:42,688 p=7539 u=ubuntu n=ansible | PLAY RECAP *************************************************************************************************************************
+2021-05-02 17:27:42,688 p=7539 u=ubuntu n=ansible | app01                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-05-02 17:27:42,688 p=7539 u=ubuntu n=ansible | rmq01                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-05-02 17:27:42,688 p=7539 u=ubuntu n=ansible | web01                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-05-02 17:31:56,929 p=7563 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision_stack/inventory-vpro with yaml plugin: YAML inventory has
+invalid structure, it should be a dictionary, got: <class 'ansible.parsing.yaml.objects.AnsibleUnicode'>
+
+2021-05-02 17:31:56,930 p=7563 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision_stack/inventory-vpro with ini plugin: /home/ubuntu/ansible-
+aws-vpc/provision_stack/inventory-vpro:5: Expected key=value host variable assignment, got: db01
+
+2021-05-02 17:31:56,930 p=7563 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision_stack/inventory-vpro as an inventory source
+
+2021-05-02 17:31:56,930 p=7563 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2021-05-02 17:31:57,085 p=7563 u=ubuntu n=ansible | PLAY [host to ip mapping in /etc/hosts file of all the instances in the stack] *****************************************************
+2021-05-02 17:31:57,099 p=7563 u=ubuntu n=ansible | TASK [Gathering Facts] *************************************************************************************************************
+2021-05-02 17:31:58,243 p=7563 u=ubuntu n=ansible | fatal: [web01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ubuntu@172.20.4.74: Permission denied (publickey).", "unreachable": true}
+2021-05-02 17:31:58,286 p=7563 u=ubuntu n=ansible | fatal: [rmq01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ubuntu@172.20.4.239: Permission denied (publickey).", "unreachable": true}
+2021-05-02 17:31:58,290 p=7563 u=ubuntu n=ansible | fatal: [app01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ubuntu@172.20.4.204: Permission denied (publickey).", "unreachable": true}
+2021-05-02 17:31:58,291 p=7563 u=ubuntu n=ansible | PLAY RECAP *************************************************************************************************************************
+2021-05-02 17:31:58,291 p=7563 u=ubuntu n=ansible | app01                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-05-02 17:31:58,292 p=7563 u=ubuntu n=ansible | rmq01                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-05-02 17:31:58,292 p=7563 u=ubuntu n=ansible | web01                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-05-02 17:39:11,413 p=7608 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision_stack/inventory-vpro with yaml plugin: YAML inventory has
+invalid structure, it should be a dictionary, got: <class 'ansible.parsing.yaml.objects.AnsibleUnicode'>
+
+2021-05-02 17:39:11,414 p=7608 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision_stack/inventory-vpro with ini plugin: /home/ubuntu/ansible-
+aws-vpc/provision_stack/inventory-vpro:5: Expected key=value host variable assignment, got: db01
+
+2021-05-02 17:39:11,414 p=7608 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision_stack/inventory-vpro as an inventory source
+
+2021-05-02 17:39:11,414 p=7608 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2021-05-02 17:39:11,568 p=7608 u=ubuntu n=ansible | PLAY [host to ip mapping in /etc/hosts file of all the instances in the stack] *****************************************************
+2021-05-02 17:39:11,581 p=7608 u=ubuntu n=ansible | TASK [Gathering Facts] *************************************************************************************************************
+2021-05-02 17:39:14,199 p=7608 u=ubuntu n=ansible | ok: [web01]
+2021-05-02 17:39:14,227 p=7608 u=ubuntu n=ansible | ok: [app01]
+2021-05-02 17:39:14,262 p=7608 u=ubuntu n=ansible | ok: [rmq01]
+2021-05-02 17:39:14,278 p=7608 u=ubuntu n=ansible | TASK [Import VPC setup Variable] ***************************************************************************************************
+2021-05-02 17:39:14,323 p=7608 u=ubuntu n=ansible | ok: [web01]
+2021-05-02 17:39:14,328 p=7608 u=ubuntu n=ansible | ok: [app01]
+2021-05-02 17:39:14,336 p=7608 u=ubuntu n=ansible | ok: [rmq01]
+2021-05-02 17:39:14,343 p=7608 u=ubuntu n=ansible | TASK [Update hosts file for all the hosts] *****************************************************************************************
+2021-05-02 17:39:15,221 p=7608 u=ubuntu n=ansible | ok: [app01]
+2021-05-02 17:39:15,223 p=7608 u=ubuntu n=ansible | changed: [rmq01]
+2021-05-02 17:39:15,228 p=7608 u=ubuntu n=ansible | ok: [web01]
+2021-05-02 17:39:15,242 p=7608 u=ubuntu n=ansible | PLAY RECAP *************************************************************************************************************************
+2021-05-02 17:39:15,243 p=7608 u=ubuntu n=ansible | app01                      : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-05-02 17:39:15,243 p=7608 u=ubuntu n=ansible | rmq01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-05-02 17:39:15,243 p=7608 u=ubuntu n=ansible | web01                      : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
