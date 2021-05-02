@@ -30,8 +30,8 @@
         home: /usr/local/tomcat8
 
     - file:
-      path: /tmp/tomcat8
-      state: directory
+        path: /tmp/tomcat8
+        state: directory
 
     - name: Extract tomcat 
       unarchive: 
